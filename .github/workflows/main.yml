@@ -21,10 +21,13 @@ jobs:
         run: |
           pip install autoflake
           autoflake --in-place --remove-all-unused-imports --remove-unused-variables --recursive .
-      - name: Commit changes
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          git checkout -b feature-branch
           git add .
-          git commit -m "Format code with black"
-          git push origin "${{ github.ref }}"
+          git commit -m "Build and test successful"
+          git push --set-upstream origin feature-branch
