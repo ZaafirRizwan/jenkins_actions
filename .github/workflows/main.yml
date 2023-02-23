@@ -33,6 +33,6 @@ jobs:
     - name: Push changes
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: 'Apply Black formatting'
+        commit_message: 'Apply Autoflake formatting'
 #     - name: Run Pylint
 #       run: pylint *.py
