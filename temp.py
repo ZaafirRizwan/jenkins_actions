@@ -7,7 +7,6 @@ import cupy as cp
 import os
 
 
-
 def main():
 
 
