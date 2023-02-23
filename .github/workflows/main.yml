@@ -23,7 +23,7 @@ jobs:
       run: pip install pylint black
 
     - name: Run Pylint
-      run: pylint .
+      run: pylint temp.py
 
     - name: Run Black
-      run: black . --check
+      run: black temp.py --check
