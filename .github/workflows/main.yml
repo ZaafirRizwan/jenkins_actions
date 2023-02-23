@@ -25,9 +25,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          git checkout -b feature-branch
+          git config --global user.email "jenkins@example.com"
+          git config --global user.name "Jenkins"
           git add .
-          git commit -m "Build and test successful"
-          git push --set-upstream origin feature-branch
+          git commit -m "Jenkins build ${BUILD_NUMBER}"
+          git push origin main
