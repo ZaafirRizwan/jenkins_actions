@@ -34,5 +34,5 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: 'Apply Autoflake formatting'
-#     - name: Run Pylint
-#       run: pylint *.py
+    - name: Run Pylint
+      run: pylint *.py
