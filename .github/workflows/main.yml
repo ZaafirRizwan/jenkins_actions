@@ -1,30 +1,29 @@
-name: Format code
+name: Python quality check
 
-on: push
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  format:
+  quality-check:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Format code with black
-        run: |
-          pip install black
-          black .
-      - name: Sort imports with isort
-        run: |
-          pip install isort
-          isort .
-      - name: Remove unused imports with autoflake
-        run: |
-          pip install autoflake
-          autoflake --in-place --remove-all-unused-imports --remove-unused-variables --recursive .
-      - name: Commit and push changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --global user.email "zaafir.rizwan@gmail.com"
-          git config --global user.name "Zaafir"
-          git add .
-          git commit -m "Jenkins build ${BUILD_NUMBER}"
-          git push .
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Install dependencies
+      run: pip install pylint black
+
+    - name: Run Pylint
+      run: pylint my_module.py
+
+    - name: Run Black
+      run: black my_module.py --check
