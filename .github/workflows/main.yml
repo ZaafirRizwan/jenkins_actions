@@ -27,4 +27,4 @@ jobs:
           git config --global user.name "Zaafir"
           git add .
           git commit -m "Jenkins build ${BUILD_NUMBER}"
-          git push origin main
+          git push .
