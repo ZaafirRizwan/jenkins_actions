@@ -23,6 +23,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint black
     - name: Run Pylint
-      run: pylint --output-format=colorized --rcfile=pylint.pylintrc **/*.py
+      run: pylint --output-format=colorized --rcfile=pylint.pylintrc *.py
     - name: Run Black
       run: black --check --diff .
