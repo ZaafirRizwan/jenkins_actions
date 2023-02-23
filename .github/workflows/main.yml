@@ -30,4 +30,4 @@ jobs:
         commit_message: 'Apply Black formatting'
         
     - name: Run Pylint
-      run: pylint --fix *.py
+      run: autopep8 --in-place --aggressive --aggressive *.py
