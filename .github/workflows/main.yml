@@ -23,7 +23,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint black autoflake
         pip install isort[requirements_deprecated_finder,pipfile_deprecated_finder]
-        pip: -r requirements.txt
+        pip install -r requirements.txt
     - name: Run Black
       run: black *.py
     - name: Push changes
