@@ -30,7 +30,9 @@ jobs:
          commit_message: 'Apply Black formatting'
     - name: Run AutoFlake
       run: autoflake --in-place --remove-unused-variables --remove-all-unused-imports --recursive *.py
- 
-        
+    - name: Push changes
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: 'Apply Black formatting'
 #     - name: Run Pylint
 #       run: pylint *.py
