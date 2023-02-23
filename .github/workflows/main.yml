@@ -24,12 +24,12 @@ jobs:
         pip install pylint black autoflake
     - name: Run Black
       run: black *.py
-    - name: Push changes
-      uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_message: 'Apply Black formatting'
+#     - name: Push changes
+#       uses: stefanzweifel/git-auto-commit-action@v4
+#       with:
+#         commit_message: 'Apply Black formatting'
     - name: Run AutoFlake
-      run: autoflake --remove-unused-variables  --remove-all-unused-imports *.py
+      run: autoflake --remove-unused-variables --remove-unused-imports --recursive .
     - name: Push changes
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
