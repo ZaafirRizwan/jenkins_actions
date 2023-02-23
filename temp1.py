@@ -5,12 +5,10 @@ import torch
 import os
 
 
-
 def main():
-  
-  a =  np.arange(10)
-  ls = os.listdir()
-  
-  
-if __name__ == '__main__':
-  main()
+    a = np.arange(10)
+    ls = os.listdir()
+
+
+if __name__ == "__main__":
+    main()
