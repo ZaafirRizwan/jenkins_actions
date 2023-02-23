@@ -23,8 +23,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config --global user.email "jenkins@example.com"
-          git config --global user.name "Jenkins"
+          git config --global user.email "zaafir.rizwan@gmail.com"
+          git config --global user.name "Zaafir"
           git add .
           git commit -m "Jenkins build ${BUILD_NUMBER}"
           git push origin main
