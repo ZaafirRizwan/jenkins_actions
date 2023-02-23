@@ -1,29 +1,28 @@
-name: Python quality check
+name: Lint and Format Python Code
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  quality-check:
+  lint-and-format:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
+    - name: Checkout Code
       uses: actions/checkout@v2
-
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
-
-    - name: Install dependencies
-      run: pip install pylint black
-
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pylint black
     - name: Run Pylint
-      run: pylint temp.py
-
+      run: pylint --output-format=colorized --rcfile=.pylintrc **/*.py
     - name: Run Black
-      run: black temp.py --check
+      run: black --check --diff .
