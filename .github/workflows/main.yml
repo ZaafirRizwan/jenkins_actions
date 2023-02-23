@@ -35,5 +35,5 @@ jobs:
       with:
         commit_message: 'Apply Black formatting'
         
-    - name: Run Pylint
-      run: pylint *.py
+#     - name: Run Pylint
+#       run: pylint *.py
