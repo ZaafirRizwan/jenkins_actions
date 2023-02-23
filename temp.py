@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import args
 import cupy as cp
 import os
-
+import torch
 
 def main():
     print("hello")
