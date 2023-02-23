@@ -7,6 +7,7 @@ import cupy as cp
 import os
 import torch
 
+
 def main():
     print("hello")
 
