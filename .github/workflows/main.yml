@@ -24,3 +24,7 @@ jobs:
         pip install pylint black
     - name: Run Black
       run: black *.py
+    - name: Push changes
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: 'Apply Black formatting'
