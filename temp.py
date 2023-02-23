@@ -7,26 +7,9 @@ import cupy as cp
 import os
 
 
-
-
-
-
-
-
-
-
-
-
-
 def main():
+    print("hello")
 
 
-  print("hello")
-  
-  
-  
 if __name__ == "__main__":
-
-  main()
-  
-
+    main()
